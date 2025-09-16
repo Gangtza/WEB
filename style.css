@@ -1,0 +1,119 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* Offset for fixed navbar */
+}
+
+.container {
+    flex: 1 0 auto;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* Scroller Styles */
+.scrolling-wrapper {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+}
+
+.scrolling-track {
+    display: flex;
+    width: max-content;
+    padding: 1rem 0;
+}
+
+.scroller-item {
+    width: 220px;
+    margin: 0 15px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.scroller-item h6 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 8px;
+}
+
+.scroller-image {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.scroller-image:hover {
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Footer Styles */
+footer {
+    padding: 20px 0;
+    border-top: 1px solid #e9ecef;
+    flex-shrink: 0;
+}
+
+/* Social Icon Styles */
+.social-icons {
+    padding-bottom: 1rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #6c757d; /* secondary grey */
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+    background-color: #007bff; /* primary blue */
+}
+
+/* Modal Description Styling */
+#detailModalDescription {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+/* Hide delete button by default */
+#delete-btn {
+    display: none;
+}
